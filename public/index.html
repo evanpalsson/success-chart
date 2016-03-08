@@ -21,7 +21,9 @@
     <span ng-show="username">
         Hello, {{ username }} | <a href="#" ng-click="logout()">Logout</a>
     </span>
-    <a href="#" ng-hide="user" ng-click="login()">Login</a>
+		<span ng-hide="username">
+			<a href="#" ng-hide="user" ng-click="login()">Login</a>
+		</span>
     <div id="view" ui-view></div>
 </body>
 
