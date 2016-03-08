@@ -1,20 +1,14 @@
 var app = angular.module('success-chart', ['firebase']);
 
 	// Facebook login
-	app.controller('loginCtrl', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
+	app.controller('loginCtrl', ['$scope', '$firebaseAuth',
 
-	    var ref = new Firebase("https://success-chart.firebaseio.com");
-	    ref.authWithOAuthPopup("facebook", function(error, authData) {
-	        if (error) {
-	            console.log("Login Failed!", error);
-	        } else {
-	            console.log("Authenticated successfully with payload:", authData);
-	        }
-	    });
+		function($scope, $firebaseAuth) {
+			var ref = new Firebase("https://success-chart.firebaseio.com");
+    		$scope.authObj = $firebaseAuth(ref);
+		}
 
-	    $scope.login = function() {
-	    	
-	    }
-
-	}]);
+		console.log('loginCtrl is working');
+		
+	]);
 

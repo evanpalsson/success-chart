@@ -1,21 +1,26 @@
-var app = angular.module('success-chart', ['ui.router']);
+var app = angular.module('success-chart', ['firebase', 'ui.router']);
 
-	app.config(function($stateProvider, $urlRouterProvider){
+	app.config(
+		function($stateProvider, $urlRouterProvider) {
 
-		$urlRouterProvider
-			.otherwise('/');
-			
-		$stateProvider
-			.state('chart', {
-				url: '/',
-				templateUrl: 'views/chart.html'
-			})
-			// .state('login', {
-			// 	url: '/login',
-			// 	templateUrl: 'login/login.html',
-			// 	controller: "loginCtrl"
-			// });
-	});
+			$urlRouterProvider
+				.otherwise('/');
+				
+			$stateProvider
+				.state('login', {
+					url: '/',
+					templateUrl: 'login/login.html',
+					controller: 'indexCtrl'
+				})
+				.state('chart', {
+					url: '/chart',
+					templateUrl: 'views/chart.html'
+				});
+
+
+
+		}
+	);
 
 	console.log('app.js is working')
 
