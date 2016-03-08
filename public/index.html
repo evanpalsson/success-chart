@@ -14,13 +14,13 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js'></script>
-    
+
 </head>
 
 <body>
-    <!-- <span ng-show="user"> -->
-        {{ username }} | <a href="#" ng-click="logout()">Logout</a>
-    <!-- </span> -->
+    <span ng-show="username">
+        Hello, {{ username }} | <a href="#" ng-click="logout()">Logout</a>
+    </span>
     <a href="#" ng-hide="user" ng-click="login()">Login</a>
     <div id="view" ui-view></div>
 </body>
@@ -29,6 +29,6 @@
 	<script src='app.js'></script>
     <script src='indexCtrl.js'></script>
     <script src='js/custom.js'></script>
-    
+
 
 </html>

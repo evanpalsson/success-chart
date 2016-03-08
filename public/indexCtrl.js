@@ -5,13 +5,13 @@ app.controller('indexCtrl', ['$scope', '$firebaseAuth', '$state',
 
         $scope.authObj = $firebaseAuth(ref);
         $scope.authObj.$authWithOAuthToken("facebook");
-        $scope.username = [];
+        $scope.username = '';
 
         $scope.login = function() {
 	        $scope.authObj.$authWithOAuthPopup("facebook").then(function(authData) {
-                $scope.username.push(authData.facebook.displayName);
+              $scope.username = authData.facebook.displayName;
 	            console.log("Logged in as:", authData.facebook.displayName);
-	            console.log(authData);
+	            console.log('authData: ', authData);
                 $state.go('chart');
 	        }).catch(function(error) {
 	            console.error("Authentication failed:", error);
