@@ -21,6 +21,7 @@ app.controller('indexCtrl', ['$scope', '$firebaseAuth', '$state',
         $scope.logout = function() {
             $scope.authObj.$unauth();
             $state.go('login');
+            $scope.username = false;
             console.log('logged out');
         };
     }
